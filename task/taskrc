@@ -1,0 +1,14 @@
+# Where to put the database
+data.location=$XDG_DATA_HOME/task
+
+# 1-nov-24
+dateformat=d-b-y
+
+# Don't ask for confirmation before deleting a task
+confirmation=no
+
+# Don't nag me about news
+news.version=3.9.9
+
+# Aliases
+alias.rm=delete

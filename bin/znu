@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+# Set up the environment
+[ -e ~/.zprofile ] && source ~/.zprofile
+[ -e ~/.zshenv ] && source ~/.zshenv
+
+# Jump into nushell
+exec nu

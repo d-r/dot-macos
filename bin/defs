@@ -1,0 +1,64 @@
+#!/bin/zsh
+
+# Sources:
+# https://macos-defaults.com
+# https://github.com/webpro/dotfiles/blob/main/macos/defaults.sh
+# https://github.com/joeyhoer/starter/tree/master/system
+
+#-------------------------------------------------------------------------------
+# GENERAL
+
+# Enable Dark mode
+defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+
+# Use F1, F2, etc, as standard function keys
+defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
+
+# Disable input language popup
+defaults write kCFPreferencesAnyApplication TSMLanguageIndicatorEnabled 0
+
+# Show battery percentage in menubar
+defaults write com.apple.menuextra.battery ShowPercent YES
+
+#-------------------------------------------------------------------------------
+# DOCK
+
+# Auto show/hide the Dock
+defaults write com.apple.dock "autohide" -bool true
+
+# Only show active apps
+defaults write com.apple.dock "static-only" -bool true
+
+# Don't rearrange spaces based on most recent use
+defaults write com.apple.dock "mru-spaces" -bool false
+
+#-------------------------------------------------------------------------------
+# FINDER
+
+# Use list view by default
+defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
+
+# Keep folders on top when sorting by name
+defaults write com.apple.finder "_FXSortFoldersFirst" -bool true
+
+# Show file extensions
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool true
+
+# Show path bar
+defaults write com.apple.finder "ShowPathbar" -bool "true"
+
+# Show status bar
+defaults write com.apple.finder "ShowStatusbar" -bool "true"
+
+# Avoid creating .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# Search in the current folder by default
+defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf"
+
+#-------------------------------------------------------------------------------
+# RESTART AFFECTED APPS
+
+killall Dock
+killall Finder

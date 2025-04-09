@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+# Install Homebrew and packages
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+brew bundle install
+
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Create needed directories
+mkdir ~/.cache
