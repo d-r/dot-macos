@@ -16,6 +16,12 @@ end
 
 local cmd = {}
 
+local function launch(app_name)
+    return function ()
+        hs.application.launchOrFocus(app_name)
+    end
+end
+
 local function toggle_app (name)
     return function ()
         local app = hs.application.find(name)
@@ -97,6 +103,11 @@ local mod = {"ctrl", "alt"}
 
 bind(mod, "r", hs.reload)
 
+bind(mod, "y", launch("Firefox"))
+bind(mod, "u", launch("Brave Browser"))
+bind(mod, "i", launch("RustRover"))
+bind(mod, "o", launch("Obsidian"))
+bind(mod, "p", launch("Visual Studio Code"))
 bind(mod, "\\", toggle_app("kitty"))
 
 bind(mod, "left", win.snap_to_left_half)
