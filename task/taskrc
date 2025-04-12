@@ -16,3 +16,6 @@ alias.rm=delete
 # Contexts
 context.dm.read=pro:dm
 context.dm.write=pro:dm
+
+# Active context
+context=$CONTEXT
