@@ -8,8 +8,6 @@ brew bundle install
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# Create dotfile symlinks
+# Apply settings
 ./link
-
-# Apply defaults
-./bin/defs
+./apply-defaults

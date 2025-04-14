@@ -13,4 +13,4 @@ link:
 
 # Apply system defaults
 apply:
-    ./bin/defs
+    ./apply-defaults

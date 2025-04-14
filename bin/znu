@@ -1,7 +1,4 @@
 #!/bin/zsh
 
-# Set up the environment
 [ -e ~/.zprofile ] && source ~/.zprofile
-
-# Jump into nushell
 exec nu
