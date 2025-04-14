@@ -13,3 +13,6 @@ mkdir ~/.cache
 
 # Create dotfile symlinks
 ./link
+
+# Apply defaults
+./bin/defs
