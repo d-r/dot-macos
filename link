@@ -39,3 +39,7 @@ link nushell .config
 
 # ~/Library/Application Support/
 link tealdeer "Library/Application Support"
+
+# ~/.local/bin/
+mkdir ~/.local
+link bin .local

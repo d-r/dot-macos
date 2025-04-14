@@ -14,22 +14,23 @@ export XDG_STATE_HOME="$HOME/.state"
 
 export XDG_MUSIC_DIR="$HOME/media/audio"
 
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.config/emacs/bin"
+export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+
+export HOMEBREW_BUNDLE_FILE="$HOME/sys/Brewfile"
+
 export EDITOR="micro"
+
 export TERM="xterm-256color"
 
 # Colorize man pages using `bat`.
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-export HOMEBREW_BUNDLE_FILE="$HOME/sys/Brewfile"
-
 # Default is "~/Library/Application Support/eza".
 # Setting this doesn't override it.
 # TODO: Figure out why.
 export EZA_CONFIG_DIR="$HOME/.config/eza"
-
-export PATH="$PATH:$HOME/sys/bin"
-export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
-export PATH="$PATH:$HOME/.config/emacs/bin"
-export PATH="$PATH:$HOME/.cargo/bin"
 
 . "$HOME/.cargo/env"
