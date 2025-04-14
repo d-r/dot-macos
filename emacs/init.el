@@ -4,12 +4,12 @@
 ;;
 ;; Sources:
 ;; https://protesilaos.com/codelog/2024-11-28-basic-emacs-configuration/
+;; https://protesilaos.com/emacs/dotemacs
 
 ;;------------------------------------------------------------------------------
 ;; SANITY
 
 ;; Disable backups and lockfiles.
-;; Stolen from https://protesilaos.com/emacs/dotemacs.
 (setq make-backup-files nil)
 (setq create-lockfiles nil)
 
