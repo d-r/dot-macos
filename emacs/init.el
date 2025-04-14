@@ -121,8 +121,8 @@
 
 ;; This shows completion canditates a transient popup in the centre of the
 ;; screen, rather than inside the minibuffer at the bottom.
-(use-package vertico-posframe
-  :init (vertico-posframe-mode))
+;; (use-package vertico-posframe
+;;   :init (vertico-posframe-mode))
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
