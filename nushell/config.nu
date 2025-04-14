@@ -12,9 +12,9 @@ alias t = task
 alias rr = rustrover
 alias yt = yt-dlp
 
-def o [$path = "."] {
-    ^open $path
-}
+alias o = open
+alias open = ^open
+alias here = open .
 
 #-------------------------------------------------------------------------------
 # BREWFILE
