@@ -12,7 +12,7 @@ def bf [] {
 
 # View changes made to the Brewfile
 def "bf diff" [] {
-    cd ~/sys
+    cd ($env.HOMEBREW_BUNDLE_FILE | path dirname)
     git diff Brewfile
 }
 
