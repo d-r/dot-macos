@@ -1,3 +1,3 @@
-# Sys
+# .macos
 
 My macOS configuration.
