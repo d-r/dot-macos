@@ -10,3 +10,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # Create needed directories
 mkdir ~/.cache
+
+# Create dotfile symlinks
+./link

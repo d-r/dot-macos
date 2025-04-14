@@ -1,0 +1,41 @@
+#!/usr/bin/env nu
+
+def warn [msg: string] {
+    print --stderr $msg
+}
+
+def link [src, dst] {
+    let src = $src | path expand
+    if not ($src | path exists) {
+        warn $"($src) not found"
+        return
+    }
+
+    let dst = $env.HOME | path join $dst
+
+    # h = If the target is a symbolic link - replace it, don't follow it.
+    # F = If the target exists, and is a directory, replace it with a link.
+    #     But only if it's empty. It won't recursively delete folders.
+    # f = Force. Overwrite existing link.
+    # v = Be verbose.
+    ln -shFfv $src $dst
+}
+
+#-------------------------------------------------------------------------------
+# DO EET!
+
+# ~/
+link zsh/zshrc .zshrc
+link zsh/zshenv .zshenv
+link zsh/zprofile .zprofile
+link hammerspoon .hammerspoon
+
+# ~/.config/
+link git .config
+link task .config
+link kitty .config
+link emacs .config
+link nushell .config
+
+# ~/Library/Application Support/
+link tealdeer "Library/Application Support"
