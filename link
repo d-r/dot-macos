@@ -25,9 +25,8 @@ def link [src, dst] {
 # DO EET!
 
 # ~/
-link zsh/zshrc .zshrc
-link zsh/zshenv .zshenv
 link zsh/zprofile .zprofile
+link zsh/zshrc .zshrc
 link hammerspoon .hammerspoon
 
 # ~/.config/
