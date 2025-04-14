@@ -179,7 +179,7 @@
 ;; Been trying out smartparens, but when you type ', it inserts a *pair* of them.
 ;; Deeply annoying default behaviour for Elisp editing.
 ;; It's configurable, but I shouldn't have to "fix" broken defaults.
-(use-package smartparens)
+;; (use-package smartparens)
 
 ;; Enable paredit for Elisp.
 (use-package paredit
