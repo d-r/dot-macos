@@ -1,1 +1,1 @@
-export PROMPT="%F{blue}%~> "
+export PROMPT="%F{blue}%~>%f "
