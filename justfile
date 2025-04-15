@@ -2,10 +2,14 @@
 default:
     @just --list --unsorted
 
-# Install/update Homebrew packages
+# Install/update packages in Brewfile
 in:
-    brew bundle dump --force
     brew bundle install --cleanup
+
+# Update Brewfile
+up:
+    brew bundle dump --force
+    git diff Brewfile
 
 # Link dotfiles
 link:
