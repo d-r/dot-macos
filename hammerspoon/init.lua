@@ -26,8 +26,6 @@ end
 --------------------------------------------------------------------------------
 -- COMMANDS
 
-local cmd = {}
-
 local function launch(app_name)
     return function ()
         hs.application.launchOrFocus(app_name)
