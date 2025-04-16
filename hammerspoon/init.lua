@@ -1,3 +1,15 @@
+--------------------------------------------------------------------------------
+-- SPOONS
+--
+-- https://github.com/Hammerspoon/hammerspoon/blob/master/SPOONS.md#what-is-a-spoon
+
+-- Generate EmmyLua annotations for Hammerspoon and installed Spoons.
+-- https://www.hammerspoon.org/Spoons/EmmyLua.html
+hs.loadSpoon("EmmyLua")
+
+--------------------------------------------------------------------------------
+-- HELPERS
+
 local fn = hs.fnutils
 local inspect = hs.inspect.inspect
 local show = hs.alert.show
