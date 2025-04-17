@@ -29,3 +29,5 @@ export LC_TIME=$LANG
 export EDITOR="micro"
 export TERM="xterm-256color"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'" # Colorize man pages
+
+export NVIM_APPNAME="lazyvim"
