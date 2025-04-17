@@ -36,7 +36,7 @@ brew "wget"
 brew "yazi"
 brew "yt-dlp"
 brew "zoxide"
-brew "railwaycat/emacsmacport/emacs-mac", args: ["with-native-compilation"]
+brew "d12frosted/emacs-plus/emacs-plus@30"
 cask "ableton-live-suite"
 cask "appcleaner"
 cask "balenaetcher"
