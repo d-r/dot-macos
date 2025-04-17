@@ -34,7 +34,8 @@ link Brewfile .config
 link git .config
 link task .config
 link kitty .config
-link emacs .config
+# link emacs .config
+link doom .config
 link nushell .config
 
 # ~/Library/Application Support/
