@@ -29,13 +29,13 @@ end
 -- APPS
 
 local function launch(app_name)
-    return function ()
+    return function()
         hs.application.launchOrFocus(app_name)
     end
 end
 
-local function toggle_app (name)
-    return function ()
+local function toggle_app(name)
+    return function()
         local app = hs.application.find(name)
         if not app or app:isHidden() then
             hs.application.launchOrFocus(name)
@@ -50,7 +50,7 @@ end
 -- WINDOWS
 
 local function modify_focused_window(f)
-    return function ()
+    return function()
         local w = hs.window.focusedWindow()
         if w then f(w) end
     end
@@ -63,13 +63,13 @@ local function reframe(f)
     end)
 end
 
-local snap_to_left_half = reframe(function (b)
-    return {b.x, b.y, b.w / 2, b.h}
+local snap_to_left_half = reframe(function(b)
+    return { b.x, b.y, b.w / 2, b.h }
 end)
 
-local snap_to_right_half = reframe(function (b)
+local snap_to_right_half = reframe(function(b)
     local w = b.w / 2
-    return {b.x + w, b.y, w, b.h}
+    return { b.x + w, b.y, w, b.h }
 end)
 
 local maximize = reframe(identity)
@@ -77,13 +77,13 @@ local maximize = reframe(identity)
 -- MENU
 
 local function show_menu(get_items, on_select)
-    return function ()
+    return function()
         local choices = {}
         for k, v in pairs(get_items()) do
-            table.insert(choices, {text = k, subText = v})
+            table.insert(choices, { text = k, subText = v })
         end
 
-        local function on_completion (choice)
+        local function on_completion(choice)
             if choice ~= nil then
                 on_select(choice.subText)
             end
@@ -94,12 +94,12 @@ local function show_menu(get_items, on_select)
 end
 
 local function load_json(path)
-    return function ()
+    return function()
         return hs.json.read(path)
     end
 end
 
-local function paste (text)
+local function paste(text)
     hs.pasteboard.writeObjects(text)
     hs.eventtap.keyStrokes(text)
 end
@@ -111,7 +111,7 @@ end
 --------------------------------------------------------------------------------
 -- CONFIG
 
-local hyper = {"ctrl", "alt", "cmd", "shift"}
+local hyper = { "ctrl", "alt", "cmd", "shift" }
 
 bind(hyper, "r", hs.reload)
 
