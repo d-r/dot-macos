@@ -38,6 +38,7 @@ link kitty .config
 # link emacs .config
 link doom .config
 link nvim .config
+link karabiner/karabiner.json .config/karabiner
 
 # ~/Library/Application Support/
 link tealdeer "Library/Application Support"
