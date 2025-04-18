@@ -109,22 +109,22 @@ end
 --------------------------------------------------------------------------------
 -- CONFIG
 
-local mod = {"ctrl", "alt"}
+local hyper = {"ctrl", "alt", "cmd", "shift"}
 
-bind(mod, "r", hs.reload)
+bind(hyper, "r", hs.reload)
 
-bind(mod, "y", launch("Firefox"))
-bind(mod, "u", launch("Brave Browser"))
-bind(mod, "i", launch("RustRover"))
-bind(mod, "o", launch("Obsidian"))
-bind(mod, "p", launch("Visual Studio Code"))
-bind(mod, "\\", toggle_app("kitty"))
+bind(hyper, "y", launch("Firefox"))
+bind(hyper, "u", launch("Brave Browser"))
+bind(hyper, "i", launch("RustRover"))
+bind(hyper, "o", launch("Obsidian"))
+bind(hyper, "p", launch("Visual Studio Code"))
+bind(hyper, "\\", toggle_app("kitty"))
 
-bind(mod, "left", win.snap_to_left_half)
-bind(mod, "right", win.snap_to_right_half)
-bind(mod, "return", win.maximize)
+bind(hyper, "left", win.snap_to_left_half)
+bind(hyper, "right", win.snap_to_right_half)
+bind(hyper, "return", win.maximize)
 
-bind(mod, "v", show_menu(load_json("~/data/snippets.json"), paste))
-bind(mod, "b", show_menu(load_json("~/data/bookmarks.json"), open_url))
+bind(hyper, "v", show_menu(load_json("~/data/snippets.json"), paste))
+bind(hyper, "b", show_menu(load_json("~/data/bookmarks.json"), open_url))
 
 show("Hammerspoon config loaded")
