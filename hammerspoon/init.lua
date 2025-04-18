@@ -25,6 +25,8 @@ end
 
 --------------------------------------------------------------------------------
 -- COMMANDS
+--
+-- Partially applied functions to be used in keybindings.
 
 -- APPS
 
@@ -109,8 +111,10 @@ local function open_url(url)
 end
 
 --------------------------------------------------------------------------------
--- CONFIG
+-- KEYBINDINGS
 
+-- The Hyper key. All the modifiers at once. I map it to Caps Lock using
+-- Karabiner-Elements.
 local hyper = { "ctrl", "alt", "cmd", "shift" }
 
 bind(hyper, "r", hs.reload)
