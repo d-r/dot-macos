@@ -16,11 +16,11 @@ local show = hs.alert.show
 local bind = hs.hotkey.bind
 
 local function identity(x)
-    return x
+  return x
 end
 
 local function pr(x)
-    show(inspect(x))
+  show(inspect(x))
 end
 
 --------------------------------------------------------------------------------
@@ -31,47 +31,47 @@ end
 -- APPS
 
 local function launch(app_name)
-    return function()
-        hs.application.launchOrFocus(app_name)
-    end
+  return function()
+    hs.application.launchOrFocus(app_name)
+  end
 end
 
 local function toggle_app(name)
-    return function()
-        local app = hs.application.find(name)
-        if not app or app:isHidden() then
-            hs.application.launchOrFocus(name)
-        elseif hs.application.frontmostApplication() ~= app then
-            app:activate()
-        else
-            app:hide()
-        end
+  return function()
+    local app = hs.application.find(name)
+    if not app or app:isHidden() then
+      hs.application.launchOrFocus(name)
+    elseif hs.application.frontmostApplication() ~= app then
+      app:activate()
+    else
+      app:hide()
     end
+  end
 end
 
 -- WINDOWS
 
 local function modify_focused_window(f)
-    return function()
-        local w = hs.window.focusedWindow()
-        if w then f(w) end
-    end
+  return function()
+    local w = hs.window.focusedWindow()
+    if w then f(w) end
+  end
 end
 
 local function reframe(f)
-    return modify_focused_window(function(w)
-        local bounds = w:screen():frame()
-        w:setFrame(f(bounds))
-    end)
+  return modify_focused_window(function(w)
+    local bounds = w:screen():frame()
+    w:setFrame(f(bounds))
+  end)
 end
 
 local snap_to_left_half = reframe(function(b)
-    return { b.x, b.y, b.w / 2, b.h }
+  return { b.x, b.y, b.w / 2, b.h }
 end)
 
 local snap_to_right_half = reframe(function(b)
-    local w = b.w / 2
-    return { b.x + w, b.y, w, b.h }
+  local w = b.w / 2
+  return { b.x + w, b.y, w, b.h }
 end)
 
 local maximize = reframe(identity)
@@ -79,35 +79,35 @@ local maximize = reframe(identity)
 -- MENU
 
 local function show_menu(get_items, on_select)
-    return function()
-        local choices = {}
-        for k, v in pairs(get_items()) do
-            table.insert(choices, { text = k, subText = v })
-        end
-
-        local function on_completion(choice)
-            if choice ~= nil then
-                on_select(choice.subText)
-            end
-        end
-
-        hs.chooser.new(on_completion):choices(choices):show()
+  return function()
+    local choices = {}
+    for k, v in pairs(get_items()) do
+      table.insert(choices, { text = k, subText = v })
     end
+
+    local function on_completion(choice)
+      if choice ~= nil then
+        on_select(choice.subText)
+      end
+    end
+
+    hs.chooser.new(on_completion):choices(choices):show()
+  end
 end
 
 local function load_json(path)
-    return function()
-        return hs.json.read(path)
-    end
+  return function()
+    return hs.json.read(path)
+  end
 end
 
 local function paste(text)
-    hs.pasteboard.writeObjects(text)
-    hs.eventtap.keyStrokes(text)
+  hs.pasteboard.writeObjects(text)
+  hs.eventtap.keyStrokes(text)
 end
 
 local function open_url(url)
-    hs.execute("open " .. url)
+  hs.execute("open " .. url)
 end
 
 --------------------------------------------------------------------------------
