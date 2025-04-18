@@ -26,6 +26,8 @@ end
 --------------------------------------------------------------------------------
 -- COMMANDS
 
+-- APPS
+
 local function launch(app_name)
     return function ()
         hs.application.launchOrFocus(app_name)
@@ -45,34 +47,34 @@ local function toggle_app (name)
     end
 end
 
-local win = (function ()
-    local function modify(f)
-        return function ()
-            local w = hs.window.focusedWindow()
-            if w then f(w) end
-        end
-    end
+-- WINDOWS
 
-    local function reframe(f)
-        return modify(function(w)
-            local bounds = w:screen():frame()
-            w:setFrame(f(bounds))
-        end)
+local function modify_focused_window(f)
+    return function ()
+        local w = hs.window.focusedWindow()
+        if w then f(w) end
     end
+end
 
-    return {
-        modify = modify,
-        reframe = reframe,
-        snap_to_left_half = reframe(function (b)
-            return {b.x, b.y, b.w / 2, b.h}
-        end),
-        snap_to_right_half = reframe(function (b)
-            local w = b.w / 2
-            return {b.x + w, b.y, w, b.h}
-        end),
-        maximize = reframe(identity),
-    }
-end)()
+local function reframe(f)
+    return modify_focused_window(function(w)
+        local bounds = w:screen():frame()
+        w:setFrame(f(bounds))
+    end)
+end
+
+local snap_to_left_half = reframe(function (b)
+    return {b.x, b.y, b.w / 2, b.h}
+end)
+
+local snap_to_right_half = reframe(function (b)
+    local w = b.w / 2
+    return {b.x + w, b.y, w, b.h}
+end)
+
+local maximize = reframe(identity)
+
+-- MENU
 
 local function show_menu(get_items, on_select)
     return function ()
@@ -120,9 +122,9 @@ bind(hyper, "o", launch("Obsidian"))
 bind(hyper, "p", launch("Visual Studio Code"))
 bind(hyper, "\\", toggle_app("kitty"))
 
-bind(hyper, "left", win.snap_to_left_half)
-bind(hyper, "right", win.snap_to_right_half)
-bind(hyper, "return", win.maximize)
+bind(hyper, "left", snap_to_left_half)
+bind(hyper, "right", snap_to_right_half)
+bind(hyper, "return", maximize)
 
 bind(hyper, "v", show_menu(load_json("~/data/snippets.json"), paste))
 bind(hyper, "b", show_menu(load_json("~/data/bookmarks.json"), open_url))
