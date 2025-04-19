@@ -26,7 +26,7 @@ export LC_MONETARY=$LANG
 export LC_NUMERIC=$LANG
 export LC_TIME=$LANG
 
-export EDITOR="micro"
+export EDITOR="nvim"
 export TERM="xterm-256color"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'" # Colorize man pages
 

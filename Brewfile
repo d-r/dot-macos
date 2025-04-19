@@ -20,7 +20,6 @@ brew "less"
 brew "luajit"
 brew "marksman"
 brew "mas"
-brew "micro"
 brew "mpd", restart_service: :changed
 brew "neovim"
 brew "node"
