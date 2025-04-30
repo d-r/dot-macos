@@ -95,9 +95,10 @@ local function show_menu(get_items, on_select)
   end
 end
 
-local function load_json(path)
+local function load_json(filename)
+  local data_path = "~/.data/dot/"
   return function()
-    return hs.json.read(path)
+    return hs.json.read(data_path .. filename)
   end
 end
 
@@ -130,7 +131,7 @@ bind(hyper, "left", snap_to_left_half)
 bind(hyper, "right", snap_to_right_half)
 bind(hyper, "return", maximize)
 
-bind(hyper, "v", show_menu(load_json("~/data/snippets.json"), paste))
-bind(hyper, "b", show_menu(load_json("~/data/bookmarks.json"), open_url))
+bind(hyper, "v", show_menu(load_json("snippets.json"), paste))
+bind(hyper, "b", show_menu(load_json("bookmarks.json"), open_url))
 
 show("Hammerspoon config loaded")
