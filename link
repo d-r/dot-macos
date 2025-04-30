@@ -30,19 +30,19 @@ link zsh/zshrc .zshrc
 link hammerspoon .hammerspoon
 
 # ~/.config/
-link Brewfile .config
-link nushell .config
-link git .config
-link task .config
-link kitty .config
-# link emacs .config
-link doom .config
-link nvim .config
-link karabiner/karabiner.json .config/karabiner
+link Brewfile .config/Brewfile
+link nushell .config/nushell
+link git .config/git
+link task .config/task
+link kitty .config/kitty
+# link emacs .config/emacs
+link doom .config/doom
+link nvim .config/nvim
+link karabiner/karabiner.json .config/karabiner/karabiner.json
 
 # ~/Library/Application Support/
-link tealdeer "Library/Application Support"
+link tealdeer "Library/Application Support/tealdeer"
 
 # ~/.local/bin/
 mkdir ~/.local
-link bin .local
+link bin .local/bin
