@@ -22,6 +22,7 @@ brew "marksman"
 brew "mas"
 brew "micro"
 brew "mpd", restart_service: :changed
+brew "tree-sitter"
 brew "neovim"
 brew "node"
 brew "nushell"
