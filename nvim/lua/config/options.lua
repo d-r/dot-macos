@@ -7,7 +7,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- kitty is supposed to have Nerd Fonts built in?
+-- Enable Nerd Font icons
 vim.g.have_nerd_font = true
 
 -- Enable relative line numbers
