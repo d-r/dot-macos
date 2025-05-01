@@ -118,20 +118,22 @@ end
 -- Karabiner-Elements.
 local hyper = { "ctrl", "alt", "cmd", "shift" }
 
-bind(hyper, "r", hs.reload)
+local mod = { "ctrl", "alt" }
 
-bind(hyper, "y", launch("Firefox"))
-bind(hyper, "u", launch("Brave Browser"))
-bind(hyper, "i", launch("RustRover"))
-bind(hyper, "o", launch("Obsidian"))
-bind(hyper, "p", launch("Visual Studio Code"))
-bind(hyper, "\\", toggle_app("kitty"))
+bind(mod, "r", hs.reload)
 
-bind(hyper, "left", snap_to_left_half)
-bind(hyper, "right", snap_to_right_half)
-bind(hyper, "return", maximize)
+bind(mod, "y", launch("Firefox"))
+bind(mod, "u", launch("Brave Browser"))
+bind(mod, "i", launch("RustRover"))
+bind(mod, "o", launch("Obsidian"))
+bind(mod, "p", launch("Visual Studio Code"))
+bind(mod, "\\", toggle_app("kitty"))
 
-bind(hyper, "v", show_menu(load_json("snippets.json"), paste))
-bind(hyper, "b", show_menu(load_json("bookmarks.json"), open_url))
+bind(mod, "left", snap_to_left_half)
+bind(mod, "right", snap_to_right_half)
+bind(mod, "return", maximize)
+
+bind(mod, "v", show_menu(load_json("snippets.json"), paste))
+bind(mod, "b", show_menu(load_json("bookmarks.json"), open_url))
 
 show("Hammerspoon config loaded")
