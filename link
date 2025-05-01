@@ -35,8 +35,6 @@ link nushell .config/nushell
 link git .config/git
 link task .config/task
 link kitty .config/kitty
-# link emacs .config/emacs
-link doom .config/doom
 link nvim .config/nvim
 link karabiner/karabiner.json .config/karabiner/karabiner.json
 
