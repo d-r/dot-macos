@@ -37,12 +37,6 @@ vim.opt.smartcase = true
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 
--- Decrease update time
-vim.opt.updatetime = 250
-
--- Decrease mapped sequence wait time
-vim.opt.timeoutlen = 300
-
 -- Open new horizontal split to the right, and vertical split below
 vim.opt.splitright = true
 vim.opt.splitbelow = true
