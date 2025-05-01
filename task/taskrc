@@ -13,7 +13,12 @@ news.version=3.9.9
 # Aliases
 alias.rm=delete
 
+# Default project
+default.project=me
+
 # Contexts
+context.me.read=pro:me
+context.me.write=pro:me
 context.dm.read=pro:dm
 context.dm.write=pro:dm
 
