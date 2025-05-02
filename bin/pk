@@ -1,0 +1,21 @@
+#!/usr/bin/env nu
+
+# Read Brewfile
+def main [] {
+    bat $env.HOMEBREW_BUNDLE_FILE
+}
+
+# Write Brewfile
+def "main write" [] {
+    brew bundle dump --force
+}
+
+# Install package
+def "main in" [name] {
+    brew install $name; main write
+}
+
+# Uninstall package
+def "main un" [name] {
+    brew uninstall $name; main write
+}
